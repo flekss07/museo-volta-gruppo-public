@@ -1,0 +1,135 @@
+<html>
+	<head>
+		<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-image: url('homepage.jpg');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			font-family: Arial, sans-serif;
+		}
+		.center {
+			text-align: center;
+			position: relative;
+		}
+		#mappa {
+			margin-top: 150px;
+			width: 500px;
+		}
+		.button {
+			position: absolute;
+			top: 400px;
+			left: 52%;
+			transform: translateX(-50%);
+			background-color: #808080;
+			color: white;
+			border: none;
+			padding: 12px 30px;
+			font-size: 18px;
+			border-radius: 5px;
+			cursor: pointer;
+			text-decoration: none;
+		}
+		.button:hover {
+			background-color: #606060;
+		}
+		.titolo {
+			text-align: center;
+			font-size: 40px;
+			color: #ffffff;
+			margin-top: 50px;
+			font-weight: bold;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+		}
+		.sottotitolo {
+			text-align: center;
+			font-size: 22px;
+			color: #ffffff;
+			font-style: italic;
+			margin-top: 10px;
+			text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+		}
+		#quadro {
+			width: 50%;
+			max-width: 400px;
+			margin-right: 20px;
+		}
+		.Xdescrizione {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-top: 50px;
+			text-align: left;
+		}
+		.sfondo{
+			background-color:#ffffff;
+			width:100%;
+		}
+		.descrizione {
+			max-width: 500px;
+			font-size: 18px;
+			color: black;
+			text-align: left;
+			font-style: italic;
+			line-height: 1.6;
+		}
+		.alert {
+			text-align: center;
+			background-color: rgba(255, 255, 255, 0.7);
+			color:black;
+			padding: 20px;
+			border-radius: 10px;
+			font-size: 18px;
+			margin-top: 20px;
+			font-weight: bold;
+		}
+		footer {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+			font-size: 14px;
+			position: fixed;
+			width: 100%;
+			bottom: 0;
+			left: 0;
+		}
+		footer a {
+			color: #fff;
+			text-decoration: none;
+		}
+		footer a:hover {
+			text-decoration: underline;
+		}
+		</style>
+	</head>
+	<body>
+		<div>
+			<h1 class="titolo">MUSEO DI ALESSANDRO VOLTA</h1>
+			<p class="sottotitolo">Commemorazione del 150esimo anniversario dalla morte del grande Alessandro Volta</p>
+		</div>
+		<div class="alert">
+			Seleziona l'entrata per osservare le opere del museo.
+		</div>
+		<div class="alert">
+		<div class="center">
+			<img id="mappa" src="mappa.png" alt="Mappa">
+			<a href="galleria.html" class="button">Entrata</a>
+		</div>
+		</div>
+		<div class="sfondo">
+			<div class="Xdescrizione">
+				<img id="quadro" src="volta.png" alt="Volta">
+				<div class="descrizione">
+					<p>Alessandro Volta (1745-1827) è stato un fisico italiano, noto per le sue ricerche in campo elettrico e per l'invenzione della pila elettrica, il primo dispositivo che ha prodotto una corrente elettrica stabile. Volta è considerato uno dei pionieri della scienza moderna e il suo lavoro ha avuto un impatto significativo sullo sviluppo dell'elettricità e della tecnologia.</p>
+				</div>
+			</div>
+		<div>
+
+		<footer>
+			<p>Crediti:Museo di Alessandro Volta | progettato da [Proserpio Fabio] </p>
+		</footer>
+	</body>
+</html>
