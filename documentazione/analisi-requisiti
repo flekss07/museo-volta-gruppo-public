@@ -1,1 +1,34 @@
-mettere qua analisi requisiti
+Analisi dei requisiti: 
+Museo virtuale per la commemorazione del 150 esimo anno dalla morte di Alessandro Volta
+ Descrizione del sistema:
+Il museo deve presentare il personaggio preso in considerazione cioè Alessandro Volta, mostrando la vita e le opere create, permettendo all’utente che accede a tale risorsa di visionare l’intero repertorio di opere come se stesse camminando fisicamente in un museo.
+Scenari:
+1)	Selezione opera da visionare:
+L’utente accede al museo virtuale ed entrando all’interno del museo, seleziona a sua scelta l’opera oppure segue la linea cronologica prefissata dai progettisti/programmatori
+2)L’utente decide di registrarsi:
+L’utente accedendo al museo, ha l’opportunità di registrarsi alla piattaforma tramite le proprie credenziali così da salvare il punto in cui si trovava, oppure per le notifiche di aggiornamento della piattaforma
+Casi D’uso:
+	Acceso al museo
+Utente
+Utente registrato oppure incognito
+1.	L’utente entra nella piattaforma
+2.	Visualizza l’ homepage
+3.	Seleziona la lingua
+4.	Seleziona L’entrata del museo
+Seleziona opera
+Utente
+Utente registrato oppure incognito
+1.L’utente entra nella piattaforma
+2. Visualizza l’homepage
+3. Seleziona l’entrata del museo
+4. seleziona l’opera tramite pulsante(linea temporale) oppure seleziona le opere per muoversi
+5. mostra il movimento nel museo tramite la mappa presente
+
+	Login utente
+Utente
+Utente non ancora registrato
+1.	L’utente entra nella piattaforma
+2.	Visualizza l’homepage
+3.	Seleziona la box per il login/registrazione
+4.	Inserisce i campi richiesti
+5.	Seleziona registrazione per creare una nuova utenza e invece accedi per verificare le credenziali
