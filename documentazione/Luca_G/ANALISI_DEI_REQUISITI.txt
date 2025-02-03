@@ -1,0 +1,50 @@
+ANALISI DEI REQUISITI: Sito Museo Virtuale Volta
+
+Descrizione del Sito
+Il sito deve mostrare un museo virtuale sul celebre personaggio di Alessandro Volta, permettendo agli utenti del sito di osservare le sue opere. Le opere seguiranno un ordine cronologico della vita di Alessandro Volta.
+
+
+Scenari
+
+Scenario 1: Ricerca universitaria
+Il giovane Mario Rossi deve stilare una tesi universitaria sulle opere di Alessandro Volta. Accedendo al sito del museo virtuale, ricerca la biografia di Alessandro Volta seguendo i percorsi del sito e studia le informazioni sulle opere.
+
+Scenario 2: Manutenzione del museo
+Il sig. Verdi si tratta di uno degli amministratori del museo virtuale. Data una recente scoperta sulle opere di Alessandro Volta deve chiudere temporaneamente il sito e modificare le informazioni riguardante un opera.
+
+
+Casi d'Uso
+
+UC1: Ricerca universitaria
+Attore principale: Utente
+Precondizioni: Accesso al sito come utente
+Flusso principale:
+1. L'utente accede al sito
+2. Segue i percorsi del museo virtuale
+3. Ricerca la biografia di Alessandro Volta
+4. Trova le informazioni sulle opere
+
+Flussi alternativi:
+1a. Se lo studente conosce già le opere o l'anno cronologico che deve cercare, il sito offre una barra di ricerca che porta direttamente all'opera o all'evento.
+2a. Se lo studente ha saltato erroneamente un passaggio del percorso, il sito offre la possibilità di tornare all passo precedente
+
+
+UC2: Manutenzione del museo
+Attore principale: Amministratore
+Precondizioni: Accesso al sito come amministratore
+Flusso principale:
+1. L'amministratore chiude temporaneamente il sito
+2. Ricerca l'opera da modificare
+3. Modifica la descrizione dell'opera
+4. Fa i necessari controlli del funzionamento del sito
+5. Riapre il sito al pubblico
+
+Flussi alternativi:
+4a. Se il sito non funziona dopo i necessari controlli, il sito offre una serie di contatti per sistemare il problema
+
+Requisiti Non Funzionali:
+1. Il sito deve accogliere un gran numero di visitatori ed evitare un carico eccessivo
+2. Il sito deve essere aperto 24/7
+3. Tutte le comunicazioni e le elaborazioni dovranno essere gestite dal client lasciando il server come banca dati
+4. Il sito deve essere veritiero e assoluto nei suoi testi e descrizioni con riferimenti alle fonti tratte
+5. Il sito deve essere continuamente protetto da attacchi esterni
