@@ -1,6 +1,8 @@
+{% load static %}
+<!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" href="{% static 'museo/style-galleria.css' %}">
+		<link rel="stylesheet" href="{% static 'home/css/style-galleria.css' %}">
 	</head>
 	<body>
 		<header>
@@ -17,12 +19,12 @@
 			</div>
 			<div class="quadro">
 				<h2>Quadro</h2>
-				<img src="volta.png" alt="Quadro di Alessandro Volta">
+				<img src="{% static 'home/images/volta.png' %}" alt="Quadro di Alessandro Volta">
 			</div>
 		</div>
 		<div class="mappa">
 			<h2>Mappa</h2>
-			<img src="mappa.png" alt="Mappa del museo">
+			<img src="{% static 'home/images/mappa.png' %}" alt="Mappa del museo">
 		</div>
 		<footer>
 			<p>Crediti: Museo di Alessandro Volta</a> | Progettato da [Proserpio Fabio]</p>
