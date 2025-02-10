@@ -3,4 +3,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return HttpResponse('pagina corrente: homepage')
+    return render(request,"museo/homepage.html")
+
+def galleria(request):
+    return render(request,"museo/galleria.html")
