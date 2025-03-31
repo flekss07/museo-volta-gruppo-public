@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background:linear-gradient(to bottom,#333,#111);
+    color: #fff;
+    overflow: hidden;
+}
+
+.contenitore_slot{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slot_machine{
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background: #efefef;
+    border: 5px solid #555;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.5s ease;
+}
+
+.reel{
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.reel img{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+button{
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 1.2em;
+    cursor: pointer;
+    background-color: #ff4747;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 10 px rgba(255, 71, 71, 0.4);
+}
+button:hover{
+    background-color: #ff2a2a;
+}
+#message{
+    position: fixed;
+    top: 100px;
+    font-size: 1.5em;
+    color: #ffdf00;
+    font-weight: bold;
+}
+
+.loss{
+    background-color: red;
+}
+.win{
+    background-color: greenyellow;
+}
+.confetti{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ffc107;
+    animation: fall 1.5s linear infinite;
+    border-radius: 50%;
+}
+
+@keyframes fall{
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100%{
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
