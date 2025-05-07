@@ -10,3 +10,8 @@ class Opera(models.Model):
     desc = models.TextField()
     date = models.IntegerField()
     image = models.ImageField(upload_to='immagini',blank=True,null=True)
+    
+class User(models.Model):
+    userHash = models.CharField(max_length=255)
+    mail = models.CharField(max_length=100)
+    role = models.CharField(max_length=100)
