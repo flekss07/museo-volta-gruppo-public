@@ -9,6 +9,10 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-image: url("/static/home/images/homepage.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* Form container */
