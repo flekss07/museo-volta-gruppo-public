@@ -9,6 +9,9 @@ def index(request):
 def galleria(request):
     return render(request,"galleria.html")
 
+def master(request):
+    return render(request,"master.html")
+
 # richiesta per pagina di login
 def login(request):
     context = {} # array di contenuti da passare a pagina

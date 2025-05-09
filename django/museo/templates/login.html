@@ -1,18 +1,16 @@
 {% extends "master.html" %}
+{% load static %}
+
 {% block title %} login-page {% endblock %}
+
 {% block css %}
-    <link rel="stylesheet" href="styleRL.css">
+    <link rel="stylesheet" href="{% static 'home/css/styleRL.css' %}">
 {% endblock %}
 
 {% block content %}
-<div>
-    <label for="Email">EMAIL</label>
-    <input type="text" id="email" placeholder="inserire l'email" required>
-    <br>
-    <label for="Password">PASSWORD</label>
-    <input type="password" id="email" placeholder="inserire la password" required>
-    <br>
-    <button onclick="RegisterPage()">REGISTRAZIONE</button>
-    <br>
-</div>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_ul }}
+    <input type="submit" value="submit">
+</form>
 {% endblock %}
