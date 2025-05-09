@@ -1,57 +1,18 @@
-<html>
-    <head>
-        <script>
-            function RegisterPage()
-            {
-                window.location.href="registrazione.html";
-            }
-            async function EffettuaLogin()
-            {
-                const email=document.getElementById('email').value;
-                const psw=document.getElementById('password').value;
-                const check=false;                     
-                try{
-                    const responde= await fetch(""/*indirizzo server*/);
-                    const risposte= await responde.json();
-                    risposte.forEach(risposta => {
-                        if(email==risposta.email && psw==risposta.password)
-                            check=true;                      
-                    });
-                    if(check)
-                    {
-                        alert("l'utente con email: "+email+" si è loggato al museo di Alessandro Volta");
-                        window.location.href="homepage.html";//modificare indirizzo
-                    }
-                    else{
-                        alert("Email e/o password errate");
-                        window.location.reload();
-                    }
-                }
-                catch(error)
-                {
-                    console.error("Errore nell'operazione:", error);//
+{% extends "master.html" %}
+{% block title %} login-page {% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="styleRL.css">
+{% endblock %}
 
-                }
-            }
-        </script>
-		<link rel="stylesheet" href="styleRL.css">
-
-    </head>
-    <body>
-        <div>
-            <label for="Email">EMAIL</label>
-            <input type="text" id="email" placeholder="inserire l'email" required>
-            <br>
-            <label for="Password">PASSWORD</label>
-            <input type="password" id="email" placeholder="inserire la password" required>
-            <br>
-            <button onclick="RegisterPage()">REGISTRAZIONE</button>
-            <br>
-            <button onclick="EffettuaLogin()">Entra!</button>
-            <!--
-                <br><br>
-                <div id="quadretto">Entra come <a href="">Guest</a></div>
-            -->
-        </div>
-    </body>
-</html>
+{% block content %}
+<div>
+    <label for="Email">EMAIL</label>
+    <input type="text" id="email" placeholder="inserire l'email" required>
+    <br>
+    <label for="Password">PASSWORD</label>
+    <input type="password" id="email" placeholder="inserire la password" required>
+    <br>
+    <button onclick="RegisterPage()">REGISTRAZIONE</button>
+    <br>
+</div>
+{% endblock %}
