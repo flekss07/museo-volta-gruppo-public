@@ -9,6 +9,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    back
 }
 
 /* Form container */
@@ -70,3 +71,4 @@ form input[type="submit"] {
 form input[type="submit"]:hover {
     background-color: #357ABD;
 }
+

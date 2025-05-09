@@ -14,4 +14,3 @@ class Opera(models.Model):
 class User(models.Model):
     userHash = models.CharField(max_length=255)
     mail = models.CharField(max_length=100)
-    role = models.CharField(max_length=100)
