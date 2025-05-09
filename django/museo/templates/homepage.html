@@ -1,18 +1,9 @@
+{% extends "master.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="stiliHome.css">
-    <script>
-        function Registrazione(){
-            window.location.href="";//giusto indirizzo
-        }
-        function Slot(){
-            window.location.href="";
-        }
-    </script>
-</head>
-<body>
+{% block css%}
+<link rel="stylesheet" href="{% static 'home/css/homepage.css' %}">
+{% endblock %}
+{% block content%}
     <button onclick=Registrazione() id="RegButton"><img id="user"src="user.png"></button>
     <button onclick=Slot() id="slotButton"><img id="slot"src="slot.png"></button>
     <div>
@@ -44,6 +35,15 @@
     <footer>
         <p>Crediti: Museo di Alessandro Volta | progettato da [Proserpio Fabio]</p>
     </footer>
-</body>
-</html>
+{% endblock %}
 
+{% block script %}
+<script>
+    function Registrazione(){
+        window.location.href="";//giusto indirizzo
+    }
+    function Slot(){
+        window.location.href="";
+    }
+</script>
+{% endblock %}
