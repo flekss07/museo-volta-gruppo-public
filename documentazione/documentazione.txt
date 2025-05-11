@@ -1,1 +1,83 @@
-test
+Utilizzare un editor di markup per visualizzare il file
+
+# Documentazione Cordova
+
+ **Installazione**
+1. Scarica e installa [Node.js](https://nodejs.org/en/download/)
+Se tutto è andato a buon fine durante l'installazione, dovresti poter invocare i comandi `node` e `npm` nel prompt comandi
+
+2. Scarica e installa il client di [git](http://git-scm.com/downloads), se non lo avessi già fatto.
+Se tutto è andato a buon fine durante l'installazione, dovresti poter invocare il comando `git` dal prompt dei comandi.
+
+3. Installare il modulo `cordova` usando il comando `npm` di Node.js. Il modulo verrà automaticamente scaricato da `npm`.
+- Per macOS e Linux: `npm install -g cordova`
+- Per Windows: `C:\n>npm install -g cordova`
+
+**(Nota per macOS e Linux):**
+Potresti aver bisogno di utilizzare il prefisso `sudo` prima di `npm` per evitare problemi in cartelle ad accesso limitato. Però, per questioni di problemi successive, si suggerisce caldamente di utilizzare `nvm` (Node Version Manager) oppure `nave` per gestire le installazioni di Node.js e `npm`
+
+**(Nota per Windows):**
+La bandierina `-g` indica a `npm` di installare `cordova` globalmente. Altrimenti, il modulo `cordova` sarebbe stato installato nella sottocartella `node_modules`del progetto corrente.
+
+<br>Se tutto è andato a buon fine, prova a eseguire il comando `cordova` senza alcun argomento nel terminale, dovresti ottenere un messaggio d'aiuto.
+
+ |Versione di Cordova CLI	|Versione di Node.js supportata|
+|--------|--------|
+|12.X	|>=16.13.0	|
+|11.X	|>=12.0.0`	|
+|10.X	|>=10.0.0	|
+|9.X	|>=6.0.0	|
+
+
+# Creazione di una App
+Per cominciare un progetto bisogna aprire il terminale e impostare il percorso in cui si vuole creare il proprio progetto Cordova. 
+
+Sintassi: `cordova create percorso_file com.compagnia.nome nome_visibile`
+
+Esempio: `cordova create /home/user/progetto_volta progetto_volta com.scuola.progetto_volta Progetto_scolastico`
+
+Con il comando sopracitato verrà creata una cartella nominata `progetto_volta` in `/home/user/progetto_volta`, con un URL `com.scuola.progetto_volta` e  nome visibile con `Progetto_scolastico`
+
+Di default il seguente comando genera un'applicazione web scheletrica in cui la pagina di destinazione dell'applicazione è il file `www/index.html` del progetto.
+
+**Nota**: Se ci sono problemi durante l'installazione, consultare i seguenti link:
+- [Cordova create command reference](https://cordova.apache.org/docs/en/latest/reference/cordova-cli/index.html#cordova-create-command)
+- [Cordova project directory structure](https://cordova.apache.org/docs/en/latest/reference/cordova-cli/index.html#cordova-create-command)
+- [Cordova project templates](https://cordova.apache.org/docs/en/latest/reference/cordova-cli/index.html#cordova-create-command)
+
+### Aggiungere piattaforme
+Tutti i comandi mostrati necessitano di essere eseguiti all'interno del percorso file del progetto o nelle sottocartelle del progetto:
+
+```
+cd nome_progetto
+```
+(nel nostro caso `progetto_volta`)
+
+Per aggiungere le app dedicate, per esempio `ios` e `android`, eseguiamo i seguenti comandi
+```
+cordova platform add electron
+```
+**Nota bene**: In`config.xml`, controlla che il parametro `id` di `widget` sia `com.scuola.progetto_volta` (o il nome del sito utilizzato in precedenza), altrimenti risulterà il seguente errore: 
+```
+Error validating package name. Must look like: `com.company.Name`. Currently is: `progetto_volta`
+```
+
+Per constatare che tutto sia andato a buon fine, eseguire il comando 
+```
+cordova platform ls
+```
+**Nota**: usando questi comandi **NON** dovresti toccare alcun file all'interno di `/platforms/`
+
+Per ulteriori informazioni su come aggiungere, aggiornare o togliere piattaforme, consultare il seguente link: [cordova-platform-command](https://cordova.apache.org/docs/en/12.x-2025.01/reference/cordova-cli/index.html#cordova-platform-command)
+
+### Prerequesiti di installazione
+Per creare e eseguire delle applicazioni è necessario installare un Software Development Kit (SDK). Oppure, se si sta progettando in un browser, si può utilizzare la piattaforma `browser` per ovviare il problema, il quale non necessità di installare alcun SDK. Dunque, siccome utilizzeremo la piattaforma `browser`, scaricare la piattaforma con i comandi precedenti e controllare che electron funzioni con il seguente comando:
+```
+cordova requirements
+```
+Se non vi è alcun messaggio d'errore, eseguire il successivo comando:
+```
+cordova emulate electron
+```
+
+**Nota**: Nel caso in cui il comando sopracitato non funzionasse, riprovare con i permessi di amministratore tramite il prompt dei comandi il precedente comando.
