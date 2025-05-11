@@ -1,0 +1,35 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block title %} Galleria-museo {% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'home/css/style-galleria.css' %}">
+{% endblock %}
+{% block content %}
+<header>
+	Galleria del Museo di Alessandro Volta
+</header>
+<div class="container">
+	<div class="linea">
+		<h2>Linea del tempo</h2>
+		{% for opera in opere%}
+			<button class="timeline" onclick="imageSelect('{{opera.image.url}}')">{{ opera.date }}: {{ opera.name }}</button>
+		{% endfor %}
+	</div>
+	<div class="quadro">
+		<h2>Quadro</h2>
+		<img id="opera-image" src="" alt="immagine opera selezionata">
+	</div>
+</div>
+<div class="mappa">
+	<h2>Mappa</h2>
+	<img src="{% static 'home/images/mappa.png' %}" alt="Mappa del museo">
+</div>
+<footer>
+	<p>Crediti: Museo di Alessandro Volta</a> | Progettato da [Proserpio Fabio]</p>
+</footer>
+{% endblock %}
+{% block script %}
+<script>
+	function imageSelect(url){document.getElementById("opera-image").src = url;} // funzione che cambia l'immagine in base all'opera scelta
+</script>
+{% endblock %}

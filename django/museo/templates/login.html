@@ -1,0 +1,16 @@
+{% extends "master.html" %}
+{% load static %}
+
+{% block title %} login-page {% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'home/css/styleRL.css' %}">
+{% endblock %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_ul }}
+    <input type="submit" value="submit">
+</form>
+{% endblock %}

@@ -1,0 +1,62 @@
+<html>
+    <head>
+        
+        <script>
+            function loginPage()
+            {
+                window.location.href="login.html";
+            }
+            async function Registrazione()
+            {
+                const email=document.getElementById('email').value;
+                const psw=document.getElementById('password').value;
+                const data={
+                    email:email,
+                    psw:psw
+                };
+                try{
+                    const responde=await fetch (/*nome server*/"",{
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(data)
+                    });
+                    if (responde.ok)
+                    {
+                        alert("Utente registrato coorrettamente!");
+                        window.location.href="login.html";
+                    }
+                    else 
+                    {
+                        console.error("Errore durante l'operazione:", await responde.text());
+                    }
+
+                }
+                catch(error){                                                                                                                                                                               
+                    console.error("Errore:", error);
+                }
+            }
+
+        </script>
+		<link rel="stylesheet" href="styleRL.css">
+	</head>
+    <body>
+        <div>
+            
+            <label for="Email">EMAIL</label>
+            <input type="text" id="email" placeholder="inserire l'email" required>
+            <br>
+            <label for="Password">PASSWORD</label>
+            <input type="password" id="email" placeholder="inserire la password" required>
+            <br>
+            <button onclick="loginPage()">LOGIN</button>
+            <br>
+            <button onclick="Registrazione()">Registrati!</button>
+            <!--
+                <br><br>
+                <div id="quadretto">Entra come <a href="">Guest</a></div>
+            -->
+        </div>
+    </body>
+</html>
