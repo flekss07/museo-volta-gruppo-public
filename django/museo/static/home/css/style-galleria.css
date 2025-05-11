@@ -83,3 +83,9 @@ footer {
     text-align: center;
     font-size: 14px;
 }
+
+#opera-image
+{
+    max-height: 80%;
+}
+

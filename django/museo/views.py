@@ -1,13 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import LoginForm
+from .models import Opera
 
 # Create your views here.
 def index(request):
     return render(request,"homepage.html")
 
 def galleria(request):
-    return render(request,"galleria.html")
+    opere = Opera.objects.all().order_by("date") #prende tutte le opere in ordine di data per linea temporale
+    return render(request,"galleria.html",{"opere": opere})
 
 def master(request):
     return render(request,"master.html")
