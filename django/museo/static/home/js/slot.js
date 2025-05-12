@@ -298,23 +298,51 @@ async function startGame()
     }
 
     isSpinning = false;
+
+    //recupera le immagini visibili nei rulli
+    const visibleSrcs = 
+    [
+        getVisibleImageSrc(reels[0]),
+        getVisibleImageSrc(reels[1]),
+        getVisibleImageSrc(reels[2])
+    ];
+
+    //aziona il messaggio di avvio
     toggleStartMessage(true);
-    
+
     //controlla se i risultati sono uguali
-    if (results[0] === results[1] && results[1] === results[2]) 
+    if 
+    (
+        getFileNameFromSrc(visibleSrcs[0]) === getFileNameFromSrc(visibleSrcs[1]) &&
+        getFileNameFromSrc(visibleSrcs[1]) === getFileNameFromSrc(visibleSrcs[2])
+    ) 
     {
-        //mostra il messaggio di vittoria e avvia i coriandoli
         message.textContent = `🎉🎉🎉 HAI VINTO! 🎉🎉🎉`;
         slotMachine.classList.add('win');
         startConfetti();
-    }
+    } 
     else 
     {
-        //mostra il messaggio di sconfitta e una frase motivazionale casuale
         const randomPhrase = MOTIVATIONAL_PHRASES[Math.floor(Math.random() * MOTIVATIONAL_PHRASES.length)];
         message.innerHTML = `🍀 RIPROVA! 🍀<br> 🍀 ${randomPhrase} 🍀`;
         slotMachine.classList.add('loss');
     }
+}
+
+// Confronta solo il nome file (non tutto il path)
+function getFileNameFromSrc(src) 
+{
+    return src.split('/').pop();
+}
+
+//recupera le immagini effettivamente visibili nei tre rulli
+function getVisibleImageSrc(reel) 
+{
+    //trova la posizione centrale del rullo
+    const slots = reel.querySelectorAll('.slot img');
+   
+    //trova lo slot visibile (quello che si trova a metà del rullo)
+    return slots[4].src;
 }
 
 //event listeners
