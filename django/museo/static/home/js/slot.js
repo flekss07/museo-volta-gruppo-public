@@ -306,7 +306,8 @@ async function startGame()
         getVisibleImageSrc(reels[1]),
         getVisibleImageSrc(reels[2])
     ];
-
+    //sasdasdauysdgayugfyueafuieauigfeaufguaefuefueagfueagfuoageufgeufgaeuofguoaegfuae
+    console.log(visibleSrcs, visibleSrcs.map(getFileNameFromSrc));
     //aziona il messaggio di avvio
     toggleStartMessage(true);
 
@@ -338,11 +339,13 @@ function getFileNameFromSrc(src)
 //recupera le immagini effettivamente visibili nei tre rulli
 function getVisibleImageSrc(reel) 
 {
-    //trova la posizione centrale del rullo
+    //calcola l'indice dello slot visibile in base alla posizione attuale del rullo
+    const top = parseFloat(reel.style.top);
+    const visibleIndex = Math.abs(top) / SLOT_HEIGHT;
     const slots = reel.querySelectorAll('.slot img');
-   
-    //trova lo slot visibile (quello che si trova a metà del rullo)
-    return slots[4].src;
+    
+    //arrotonda per sicurezza
+    return slots[Math.round(visibleIndex)].src;
 }
 
 //event listeners
