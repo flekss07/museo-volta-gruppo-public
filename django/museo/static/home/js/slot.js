@@ -299,15 +299,20 @@ async function startGame()
 
     isSpinning = false;
     toggleStartMessage(true);
-    
+
     //controlla se i risultati sono uguali
-    if (results[0] === results[1] && results[1] === results[2]) 
+    if 
+    (
+        results[0] && results[1] && results[2] &&
+        getFileName(results[0]) === getFileName(results[1]) &&
+        getFileName(results[1]) === getFileName(results[2])
+    ) 
     {
         //mostra il messaggio di vittoria e avvia i coriandoli
         message.textContent = `🎉🎉🎉 HAI VINTO! 🎉🎉🎉`;
         slotMachine.classList.add('win');
         startConfetti();
-    }
+    } 
     else 
     {
         //mostra il messaggio di sconfitta e una frase motivazionale casuale
@@ -315,6 +320,11 @@ async function startGame()
         message.innerHTML = `🍀 RIPROVA! 🍀<br> 🍀 ${randomPhrase} 🍀`;
         slotMachine.classList.add('loss');
     }
+}
+
+function getFileName(path) {
+    // Restituisce solo il nome file, ignorando la directory
+    return path.split('/').pop();
 }
 
 //event listeners
