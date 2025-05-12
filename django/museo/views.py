@@ -19,3 +19,6 @@ def login(request):
     context = {} # array di contenuti da passare a pagina
     context["form"] = LoginForm() # aggiunge form ad array
     return render(request,"login.html",context) #passa dati a pagina
+
+def registrazione(request):
+    return render(request,"registrazione.html")

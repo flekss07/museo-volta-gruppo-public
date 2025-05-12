@@ -12,5 +12,11 @@
     {% csrf_token %}
     {{ form.as_ul }}
     <input type="submit" value="submit">
+    <input type="button" onclick=registrazione() value="registrazione">
 </form>
+{% endblock %}
+{% block script %}
+<script>
+    function registrazione(){window.location.href="http://localhost:8000/registrazione/";}
+</script>
 {% endblock %}

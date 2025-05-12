@@ -9,7 +9,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url("/static/home/images/homepage.jpg");
+    background-image: url("/static/home/images/voltiano.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -72,6 +72,23 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
+    background-color: #357ABD;
+}
+
+form input[type="button"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+ form input[type="button"]:hover {
     background-color: #357ABD;
 }
 
