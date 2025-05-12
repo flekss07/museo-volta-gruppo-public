@@ -112,10 +112,10 @@ function spinReel(reel, duration, forcedIndex = null)
                 //inizializza la posizione corrente
                 let currentTop;
 
-                //calcola la posizione corrente in base alla progressione
+                //controlla se il rullo è in movimento
                 if (progress < 0.8) 
                 {
-                    //
+                    //calcola la posizione corrente in base alla progressione
                     currentTop = -progress * totalHeight * 2;
                 } 
                 else 
@@ -127,6 +127,7 @@ function spinReel(reel, duration, forcedIndex = null)
                 //controlla se il rullo ha superato la posizione finale
                 if (currentTop < -totalHeight + 4 * SLOT_HEIGHT) 
                 {
+                    //calcola la posizione corrente in base alla progressione
                     currentTop += totalHeight - 8 * SLOT_HEIGHT;
                 }
                 
@@ -317,12 +318,14 @@ async function startGame()
         getFileNameFromSrc(visibleSrcs[1]) === getFileNameFromSrc(visibleSrcs[2])
     ) 
     {
+        //mostra il messaggio di vittoria e avvia i coriandoli
         message.textContent = `🎉🎉🎉 HAI VINTO! 🎉🎉🎉`;
         slotMachine.classList.add('win');
         startConfetti();
     } 
     else 
     {
+        //mostra il messaggio di sconfitta e una frase motivazionale
         const randomPhrase = MOTIVATIONAL_PHRASES[Math.floor(Math.random() * MOTIVATIONAL_PHRASES.length)];
         message.innerHTML = `🍀 RIPROVA! 🍀<br> 🍀 ${randomPhrase} 🍀`;
         slotMachine.classList.add('loss');
@@ -338,11 +341,13 @@ function getFileNameFromSrc(src)
 //recupera le immagini effettivamente visibili nei tre rulli
 function getVisibleImageSrc(reel) 
 {
-    //trova la posizione centrale del rullo
+    //calcola l'indice dello slot visibile in base alla posizione attuale del rullo
+    const top = parseFloat(reel.style.top);
+    const visibleIndex = Math.abs(top) / SLOT_HEIGHT;
     const slots = reel.querySelectorAll('.slot img');
-   
-    //trova lo slot visibile (quello che si trova a metà del rullo)
-    return slots[4].src;
+    
+    //arrotonda per sicurezza
+    return slots[Math.round(visibleIndex)].src;
 }
 
 //event listeners
