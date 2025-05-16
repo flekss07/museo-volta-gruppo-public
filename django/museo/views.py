@@ -12,6 +12,9 @@ def galleria(request):
 def master(request):
     return render(request,"master.html")
 
+def slot(request):
+    return render(request, "slot.html")
+
 # richiesta per pagina di login
 def login(request):
     context = {} # array di contenuti da passare a pagina
