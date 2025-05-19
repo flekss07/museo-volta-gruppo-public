@@ -1,3 +1,4 @@
+
 Utilizzare un editor di markup per visualizzare il file
 
 # Documentazione Cordova
@@ -81,3 +82,25 @@ cordova emulate electron
 ```
 
 **Nota**: Nel caso in cui il comando sopracitato non funzionasse, riprovare con i permessi di amministratore tramite il prompt dei comandi il precedente comando.
+
+
+# Gestione degli errori
+Questa sezione ha lo scopo di chiarire possibili errori nei quali si può incorrere durante l'installazione e/o creazione di una applicazione. **Questi errori non riassumono tutti i plausibili casi**, in quanto non tutti i codici di errori sono stati trovati. Questi dunque sono i casi più comuni in cui uno può capitare
+
+### 1. Non riesco a installare cordova
+1. Controllare che Node.js sia stato installato correttamente. Per testare il corretto funzionamento, aprire il terminale dei comandi e utilizzare i seguenti comandi: `node` e `npm`.
+2.  Controllare che il client di git sia stato installato correttamente. Per testare il corretto funzionamento, aprire il terminale dei comandi e utilizzare il seguente comando `git`.
+3. Controllare che il comando eseguito precedentemente (`npm install -g cordova`) installi globalmente il modulo `cordova`. Se non è stata inclusa la bandierina `-g`, cordova viene installato in una sottocartella del progetto.
+4. **(Windows)** Utilizzare i permessi di amministratore per l'installazione. 
+5. **(macOS/Linux)** utilizzare il prefisso `sudo` prima di eseguire il comando. Altrimenti, utilizzare `nvm` (Node Version Manager) oppure `nave` per gestire le installazioni di Node.js e `npm`
+
+### 2. Le versioni non sono compatibili
+Controllare, seguendo la tabella mostrata in precedenza, che per la versione di cordova richiesta vi sia la versione adatta. Ovvero, se si utilizza Cordova CLI 9.X, bisognerà utilizzare una versione di Node.js superiore o uguale alla 6.0.0
+
+### 3. "Current working directory is not a Cordova-based project."
+1. Controllare che il terminale stia eseguendo il comando nella cartella corretta, e che quest'ultima contenga una cartella `.cordova`, con il rispettivo `config.json` all' interno.
+2. Controllare che la cartella del progetto presenti una sotto-cartella denominata `www`, con il rispettivo `config.xml` all' interno.
+3.  Controllare che la cartella del progetto presenti una sotto-cartella denominata `platforms`.
+
+### 4. "Error validating package name. Must look like: com.company.Name. Currently is: progetto_volta"
+Entrare nel file `config.xml` e controllare che il parametro `id` di `widget` sia `com.scuola.progetto_volta` (o il nome del sito utilizzato).
