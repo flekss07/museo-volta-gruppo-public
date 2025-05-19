@@ -128,7 +128,7 @@ footer {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 5vw;
+    width: 100%;
     height: 5vh;
 }
 .common-button {
