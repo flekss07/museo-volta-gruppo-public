@@ -1,16 +1,23 @@
 {% extends "master.html" %}
 {% load static %}
-{% block css%}
+
+{% block css %}
 <link rel="stylesheet" href="{% static 'home/css/homepage.css' %}">
 <style>
     body {
-      background-image: url("{% static 'home/images/homepage.jpg' %}");
+        background-image: url("{% static 'home/images/homepage.jpg' %}");
     }
-  </style>
+</style>
 {% endblock %}
-{% block content%}
-    <button onclick=Registrazione() id="RegButton"><img id="user"src="{% static 'home/images/user.png' %}"></button>
-    <button onclick=Slot() id="slotButton"><img id="slot"src="{% static 'home/images/slot.png' %}"></button>
+
+{% block content %}
+    <button onclick="Registrazione()" id="RegButton">
+        <img id="user" src="{% static 'home/images/user.png' %}">
+    </button>
+    <button onclick="Slot()" id="slotButton">
+        <img id="slot" src="{% static 'home/images/slot.png' %}">
+    </button>
+
     <div>
         <h1 class="titolo">MUSEO DI ALESSANDRO VOLTA</h1>
         <p class="sottotitolo">Commemorazione del 150esimo anniversario dalla morte del grande Alessandro Volta</p>
@@ -21,12 +28,13 @@
             Seleziona l'entrata per osservare le opere del museo.
         </div>
     </div>
-	<div class="center-alert">
-		<div class="alert">
-			<img id="mappa" src="{% static 'home/images/mappa.png' %}" alt="Mappa">
-			<a href="http://localhost:8000/galleria" class="button">Entrata</a>
-		</div>
-	</div>
+
+    <div class="center-alert">
+        <div class="alert">
+            <img id="mappa" src="{% static 'home/images/mappa.png' %}" alt="Mappa">
+            <a id="entrataButton" href="http://localhost:8000/galleria" class="button">Entrata</a>
+        </div>
+    </div>
 
     <div class="sfondo">
         <div class="Xdescrizione">
@@ -44,11 +52,11 @@
 
 {% block script %}
 <script>
-    function Registrazione(){
-        window.location.href="http://localhost:8000/login/";//giusto indirizzo
+    function Registrazione() {
+        window.location.href = "http://localhost:8000/login/";
     }
-    function Slot(){
-        window.location.href="http://localhost:8000/slot/";
+    function Slot() {
+        window.location.href = "http://localhost:8000/slot/";
     }
 </script>
 {% endblock %}
