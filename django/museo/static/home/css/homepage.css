@@ -157,10 +157,11 @@ footer {
 
 #slotButton {
     position: absolute;
-    right: 16vw;
+    right: 8vw;
     top: 2vh;
 }
 a{
     width: 1vw;
     height: 1vh;
+    text-align: center;
 }
