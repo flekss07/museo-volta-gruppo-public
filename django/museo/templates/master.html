@@ -3,6 +3,36 @@
 <html charset="utf-8">
     <head>
         <title>{% block title %}{% endblock %}</title>
+        <style>
+            /* Medium screens (tablets, 600px+) */
+            @media (min-width: 600px) {
+                header {
+                    font-size: 24px;
+                }
+
+                .linea h2,
+                .quadro h2 {
+                    font-size: 20px;
+                }
+            }
+
+            /* Large screens (desktops, 900px+) */
+            @media (min-width: 900px) {
+                .container {
+                    flex-direction: row;
+                }
+
+                .linea {
+                    width: 25%;
+                    border-right: 2px solid #ddd;
+                    border-bottom: none;
+                }
+
+                .quadro {
+                    flex: 1;
+                }
+            }
+        </style>
         {% block css %}{% endblock %}
     </head>
     <body>
