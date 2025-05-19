@@ -10,7 +10,7 @@ body {
 .center {
     text-align: center;
     position: relative;
-    display:inline-block;
+    display: inline-block;
 }
 
 #mappa {
@@ -29,9 +29,9 @@ body {
     background-color: #808080;
     color: white;
     border: none;
-    padding: 12px 30px;
-    font-size: 18px;
-    border-radius: 5px;
+    padding: 0.8em 2em;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    border-radius: 0.5em;
     cursor: pointer;
     text-decoration: none;
 }
@@ -42,7 +42,7 @@ body {
 
 .titolo {
     text-align: center;
-    font-size: 40px;
+    font-size: clamp(2rem, 4vw, 3rem);
     color: #ffffff;
     margin-top: 5vh;
     font-weight: bold;
@@ -51,7 +51,7 @@ body {
 
 .sottotitolo {
     text-align: center;
-    font-size: 22px;
+    font-size: clamp(1rem, 2vw, 1.5rem);
     color: #ffffff;
     font-style: italic;
     margin-top: 1vh;
@@ -79,7 +79,7 @@ body {
 
 .descrizione {
     max-width: 50vw;
-    font-size: 18px;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
     color: black;
     text-align: left;
     font-style: italic;
@@ -91,9 +91,9 @@ body {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.7);
     color: black;
-    padding: 20px;
+    padding: 1.5vh 2vw;
     border-radius: 10px;
-    font-size: 18px;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
     font-weight: bold;
 }
 
@@ -107,32 +107,38 @@ body {
 footer {
     background-color: #333;
     color: #fff;
-    padding: 20px;
+    padding: 2vh;
     text-align: center;
-    font-size: 14px;
+    font-size: clamp(0.8rem, 1vw, 1rem);
     position: fixed;
     width: 100%;
-    bottom: 0vh;
-    left: 0vw;
+    bottom: 0;
+    left: 0;
 }
-#user{
+
+#user {
     display: flex;
-    position:right; 
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 5vh;
+}
+
+#slot {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     width: 5vw;
     height: 5vh;
 }
-#slot{
-    display: flex;
-    position:right; 
-    width: 50vw;
-    height: 5vh;
-}
-#RegButton{
+
+#RegButton {
     position: absolute;
     right: 2vw;
-    top: 20vh;
+    top: 2vh;
 }
-#slotButton{
+
+#slotButton {
     position: absolute;
     right: 8vw;
     top: 2vh;
