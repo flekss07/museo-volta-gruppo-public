@@ -24,7 +24,7 @@ body {
 .button {
     text-align: center;
     position: absolute;
-    top: 93%;
+    top: 45%;
     left: 53%;
     transform: translateX(-50%);
     background-color: #808080;
