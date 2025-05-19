@@ -307,7 +307,8 @@ async function startGame()
         getVisibleImageSrc(reels[1]),
         getVisibleImageSrc(reels[2])
     ];
-
+    //sasdasdauysdgayugfyueafuieauigfeaufguaefuefueagfueagfuoageufgeufgaeuofguoaegfuae
+    console.log(visibleSrcs, visibleSrcs.map(getFileNameFromSrc));
     //aziona il messaggio di avvio
     toggleStartMessage(true);
 

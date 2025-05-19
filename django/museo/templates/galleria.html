@@ -1,34 +1,38 @@
+{% extends 'master.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-	<head>
-		<link rel="stylesheet" href="{% static 'home/css/style-galleria.css' %}">
-	</head>
-	<body>
-		<header>
-			Galleria del Museo di Alessandro Volta
-		</header>
-		<div class="container">
-			<div class="linea">
-				<h2>Linea del tempo</h2>
-				<button class="timeline">1745: Nascita di Alessandro Volta</button>
-				<button class="timeline">1774: Invenzione dell'elettroforo</button>
-				<button class="timeline">1800: Invenzione della pila</button>
-				<button class="timeline">1810: Riconoscimento dall'Accademia di Francia</button>
-				<button class="timeline">1827: Morte di Alessandro Volta</button>
-			</div>
-			<div class="quadro">
-				<h2>Quadro</h2>
-				<img src="{% static 'home/images/volta.png' %}" alt="Quadro di Alessandro Volta">
-			</div>
-		</div>
-		<div class="mappa">
-			<h2>Mappa</h2>
-			<img src="{% static 'home/images/mappa.png' %}" alt="Mappa del museo">
-		</div>
-		<a href="homepage.html" class="button">HOMEPAGE</a>
-		<footer>
-			<p>Crediti: Museo di Alessandro Volta</a> | Progettato da [Proserpio Fabio]</p>
-		</footer>
-	</body>
-</html>
+{% block title %} Galleria-museo {% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'home/css/style-galleria.css' %}">
+{% endblock %}
+{% block content %}
+<header>
+	Galleria del Museo di Alessandro Volta
+</header>
+<div class="container">
+	<div class="linea">
+		<h2>Linea del tempo</h2>
+		{% for opera in opere%}
+			<button class="timeline" onclick="imageSelect('{{opera.image.url}}')">{{ opera.date }}: {{ opera.name }}</button>
+		{% endfor %}
+	</div>
+	<div class="quadro">
+		<h2>Quadro</h2>
+		<img id="opera-image" src="" alt="immagine opera selezionata">
+	</div>
+	<div class="desc">
+		
+	</div>
+</div>
+<div class="mappa">
+	<h2>Mappa</h2>
+	<img src="{% static 'home/images/mappa.png' %}" alt="Mappa del museo">
+</div>
+<footer>
+	<p>Crediti: Museo di Alessandro Volta</a> | Progettato da [Proserpio Fabio]</p>
+</footer>
+{% endblock %}
+{% block script %}
+<script>
+	function imageSelect(url){document.getElementById("opera-image").src = url;} // funzione che cambia l'immagine in base all'opera scelta
+</script>
+{% endblock %}
