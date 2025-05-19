@@ -90,9 +90,10 @@ Questa sezione ha lo scopo di chiarire possibili errori nei quali si può incorr
 ### 1. Non riesco a installare cordova
 1. Controllare che Node.js sia stato installato correttamente. Per testare il corretto funzionamento, aprire il terminale dei comandi e utilizzare i seguenti comandi: `node` e `npm`.
 2.  Controllare che il client di git sia stato installato correttamente. Per testare il corretto funzionamento, aprire il terminale dei comandi e utilizzare il seguente comando `git`.
-3. Controllare che il comando eseguito precedentemente (`npm install -g cordova`) installi globalmente il modulo `cordova`. Se non è stata inclusa la bandierina `-g`, cordova viene installato in una sottocartella del progetto.
-4. **(Windows)** Utilizzare i permessi di amministratore per l'installazione. 
-5. **(macOS/Linux)** utilizzare il prefisso `sudo` prima di eseguire il comando. Altrimenti, utilizzare `nvm` (Node Version Manager) oppure `nave` per gestire le installazioni di Node.js e `npm`
+3. Controllare di aver installato `cordova` nella cartella del progetto designato.
+4. Controllare che il comando eseguito precedentemente (`npm install -g cordova`) installi globalmente il modulo `cordova`. Se non è stata inclusa la bandierina `-g`, cordova viene installato in una sottocartella del progetto.
+5. **(Windows)** Utilizzare i permessi di amministratore per l'installazione. 
+6. **(macOS/Linux)** utilizzare il prefisso `sudo` prima di eseguire il comando. Altrimenti, utilizzare `nvm` (Node Version Manager) oppure `nave` per gestire le installazioni di Node.js e `npm`
 
 ### 2. Le versioni non sono compatibili
 Controllare, seguendo la tabella mostrata in precedenza, che per la versione di cordova richiesta vi sia la versione adatta. Ovvero, se si utilizza Cordova CLI 9.X, bisognerà utilizzare una versione di Node.js superiore o uguale alla 6.0.0
@@ -104,3 +105,10 @@ Controllare, seguendo la tabella mostrata in precedenza, che per la versione di 
 
 ### 4. "Error validating package name. Must look like: com.company.Name. Currently is: progetto_volta"
 Entrare nel file `config.xml` e controllare che il parametro `id` di `widget` sia `com.scuola.progetto_volta` (o il nome del sito utilizzato).
+
+### 5. Non riesco a emulare 'nome'
+1. Controllare di aver utilizzato i permessi di amministratore
+2. Controllare di aver installato le piattaforme e/o gli strumenti necessari per emulare il progetto. Per esempio, la piattaforma `android` richiede l' SDK (Software Development Kit) di android e un JDK (Java Development Kit) di java
+
+### 6. Timeout tentativi di download durante l'emulazione
+Come citato nel punto 5, controllare di avere i permessi di amministratore e/o utilizzare un prompt con i permessi di amministratore
