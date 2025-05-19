@@ -13,13 +13,13 @@ body {
 }
 
 #mappa {
-    margin-top: 150px;
-    width: 500px;
+    margin-top: 15vh;
+    width: 50vw;
 }
 
 .button {
     position: absolute;
-    top: 670px;
+    top: 67vh;
     left: 52%;
     transform: translateX(-50%);
     background-color: #808080;
@@ -40,7 +40,7 @@ body {
     text-align: center;
     font-size: 40px;
     color: #ffffff;
-    margin-top: 50px;
+    margin-top: 5vh;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
@@ -50,21 +50,21 @@ body {
     font-size: 22px;
     color: #ffffff;
     font-style: italic;
-    margin-top: 10px;
+    margin-top: 1vh;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 #quadro {
     width: 50%;
-    max-width: 400px;
-    margin-right: 20px;
+    max-width: 40vw;
+    margin-right: 2vw;
 }
 
 .Xdescrizione {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 5vh;
     text-align: left;
 }
 
@@ -74,7 +74,7 @@ body {
 }
 
 .descrizione {
-    max-width: 500px;
+    max-width: 50vw;
     font-size: 18px;
     color: black;
     text-align: left;
@@ -97,7 +97,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 2vh;
 }
 
 footer {
@@ -108,28 +108,28 @@ footer {
     font-size: 14px;
     position: fixed;
     width: 100%;
-    bottom: 0;
-    left: 0;
+    bottom: 0vh;
+    left: 0vw;
 }
 #user{
     display: flex;
     position:right; 
-    width: 50px;
-    height: 50px;
+    width: 5vw;
+    height: 5vh;
 }
 #slot{
     display: flex;
     position:right; 
-    width: 50px;
-    height: 50px;
+    width: 50vw;
+    height: 5vh;
 }
 #RegButton{
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: 2vw;
+    top: 20vh;
 }
 #slotButton{
     position: absolute;
-    right: 80px;
-    top: 20px;
+    right: 8vw;
+    top: 2vh;
 }
