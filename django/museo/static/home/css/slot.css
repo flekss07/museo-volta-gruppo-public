@@ -214,10 +214,10 @@ body {
 .confetti::after {
     content: '';
     position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
+    top: -0.5vh;
+    left: -0.5vh;
+    right: -0.5vh;
+    bottom: -0.5vhv;
     border-radius: inherit;
     background: inherit;
     filter: blur(5px);
@@ -227,7 +227,7 @@ body {
 
 #startMessage {
     position: fixed;
-    top: 10px;
+    top: 1vh;
     left: 50%;
     transform: translateX(-50%);
     font-family: 'Press Start 2P', cursive;
@@ -267,7 +267,7 @@ body {
 
 #message {
     /* Mantieni lo stile esistente e aggiungi: */
-    min-height: 60px;
+    min-height: 6vh;
     line-height: 1.4;
 }
 
